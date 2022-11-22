@@ -57,7 +57,7 @@ jobs:
   update_pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: secureframe/pr-update-action@v2
+    - uses: secureframe/pr-update-action@v3
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         base-branch-regex: '[a-z\d-_.\\/]+'
