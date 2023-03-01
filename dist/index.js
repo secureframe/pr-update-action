@@ -10473,8 +10473,10 @@ async function run() {
       const headBranchName = github.context.payload.pull_request.head.ref;
       const headBranch = inputs.lowercaseBranch ? headBranchName.toLowerCase() : headBranchName;
       core.info(`Head branch: ${headBranch}`);
+      core.info(`Head branch regexp: ${new RegExp(headBranchRegex)}`);
 
       const headMatches = headBranch.match(new RegExp(headBranchRegex));
+      core.info(`Head matches: ${headMatches}`);
       if (!headMatches) {
         core.setFailed('Head branch name does not match given regex');
         return;
